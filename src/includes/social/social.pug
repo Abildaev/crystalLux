@@ -1,0 +1,9 @@
+.social
+  ul
+    mixin social(icon, link)
+      li
+        a(href=link target="_blank")
+          i(class=icon)
+    +social('icon-instagram','#')      
+    +social('icon-facebook','#')    
+    +social('icon-whatsapp','https://wa.me/996504110033')    

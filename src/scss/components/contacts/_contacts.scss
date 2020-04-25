@@ -1,0 +1,151 @@
+.contacts {
+  padding-bottom: rem(81px);
+
+  @include sm {
+    padding-bottom: rem(50px);
+  }
+
+  @include xs {
+    padding-bottom: rem(30px);
+  }
+
+  &__wrap {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    position: relative;
+    padding-top: rem(30px);
+
+    @include xs {
+      flex-direction: column;
+      padding-top: 0;
+    }
+  }
+
+  &__form-wrap {
+    background-color: $bg;
+    border-radius: 0 rem(10px) rem(10px) 0;
+    max-width: 44.1%;
+    width: 100%;
+    box-sizing: border-box;
+    margin-right: rem(30px);
+
+    @include sm {
+      margin-right: rem(15px);
+    }
+
+    @include xs {
+      max-width: 100%;
+    }
+  }
+
+  .form {
+    padding: rem(40px);
+    box-sizing: border-box;
+
+    @include lg {
+      padding: rem(35px);
+    }
+
+    @include md {
+      padding: rem(30px);
+    }
+
+    @include sm {
+      padding: rem(15px) rem(15px) rem(15px) 0;
+    }
+
+    @include xs {
+      padding: rem(20px);
+    }
+
+    &__input {
+      max-width: rem(377px);
+      width: 100%;
+      border-radius: rem(10px);
+      background-color: $wc;
+      display: flex;
+      align-items: center;
+      margin-bottom: rem(20px);
+      box-sizing: border-box;
+
+      @include xs {
+        max-width: 100%;
+      }
+
+      &_textarea {
+        padding: rem(15px) rem(20px) rem(20px);
+        margin-bottom: rem(40px);
+        height: rem(165px);
+        align-items: flex-start;
+      }
+
+      input {
+        min-height: rem(45px);
+        padding: 0 rem(20px);
+      }
+
+      input,
+      textarea {
+        width: 100%;
+        height: 100%;
+        color: #666;
+        font-size: rem(14px);
+        font-weight: 400;
+      }
+    }
+  }
+
+  &__map {
+    max-width: rem(620px);
+    width: 100%;
+    border-radius: rem(10px);
+    overflow: hidden;
+
+    @include lg {
+      max-width: rem(500px);
+    }
+
+    @include md {
+      max-width: rem(370px);
+    }
+
+    @include sm {
+      max-width: rem(285px);
+    }
+
+    @include xs {
+      max-width: 100%;
+      min-height: rem(400px);
+      display: flex;
+      margin-top: rem(30px);
+      padding: 0 rem(25px);
+      box-sizing: border-box;
+    }
+
+    #map {
+      width: 100%;
+      height: 100%;
+
+      @include xs {
+        height: auto;
+      }
+    }
+  }
+
+  &__map-overlay {
+    max-width: 50%;
+    width: 100%;
+    min-height: rem(405px);
+    background-color: $mc;
+    border-radius: rem(10px) 0 0 rem(10px);
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -1;
+
+    @include xs {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,459 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  position: relative;
+  font-family: $monsterat;
+}
+
+
+a,
+i {
+  text-decoration: none;
+  transition: $tr;
+}
+
+
+
+
+img {
+  width: 100%;
+  max-width: 100%;
+
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+
+  li {
+    list-style: none;
+  }
+}
+
+input,
+button,
+textarea {
+  outline: none;
+  border: none;
+  background: transparent;
+}
+
+textarea {
+  resize: none;
+}
+
+// // flex footer
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  overflow: hidden;
+
+  .content {
+    flex: 1 0 auto;
+  }
+}
+
+
+
+// // flex footer end
+
+// container
+.container {
+  width: 100%;
+  padding-right: rem(15px);
+  padding-left: rem(15px);
+  margin-right: auto;
+  margin-left: auto;
+  max-width: rem(1170px);
+  position: relative;
+  box-sizing: border-box;
+
+  @include lg {
+    max-width: rem(1150px);
+  }
+
+  @include md {
+    max-width: rem(960px);
+  }
+
+  @include sm {
+    max-width: rem(760px);
+  }
+
+  @include xs {
+    max-width: 100%;
+  }
+}
+
+
+// // container end
+
+// body-scroll
+.body-scroll {
+  overflow: hidden;
+  position: relative;
+}
+
+// body-scroll end
+
+// social
+.social {
+  ul {
+    display: flex;
+    flex-direction: row;
+
+    li {
+      margin-right: rem(15px);
+
+      @include md {
+        margin-right: rem(10px);
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      a {
+        color: $wc;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+
+        &:hover {
+          color: $sc;
+
+          i {
+            color: $sc;
+          }
+        }
+
+        i {
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+
+.social-float {
+  position: fixed;
+  z-index: 13;
+  top: 0;
+  transform: translateX(-100%);
+  transition: $tr;
+  display: none;
+
+  @include sm {
+    display: block;
+  }
+
+  ul {
+    flex-direction: column;
+
+    li {
+      margin: 0;
+      display: inline-block;
+
+      &:first-child {
+        a {
+          background-color: #c13584;
+        }
+      }
+
+      &:nth-child(2) {
+        a {
+          background-color: #3b5998;
+        }
+      }
+
+      &:last-child {
+        a {
+          background-color: #25d366;
+        }
+      }
+
+      a {
+        width: rem(25px);
+        height: rem(25px);
+
+        &:hover {
+          i {
+            color: $wc !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+// // social end
+
+
+
+// // btn
+.btn-wrap {
+  display: flex;
+
+  &_left {
+    text-align: left;
+  }
+
+  &_center {
+    text-align: center;
+  }
+
+  &_right {
+    text-align: right;
+  }
+
+  &_block {
+    .btn {
+      display: flex;
+      width: 100%;
+      text-transform: uppercase;
+    }
+
+    .btn__inner {
+      width: 100%;
+      cursor: pointer;
+    }
+  }
+
+
+
+  .btn {
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    border-radius: rem(10px);
+
+    &__circle {
+      border-radius: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      margin-left: 0px;
+      margin-top: 0px;
+      pointer-events: none;
+    }
+
+    &__inner {
+      background-color: $mc;
+      color: $wc;
+      font-size: rem(20px);
+      transition: 400ms;
+      padding: rem(11px) rem(17px);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &__container {
+      position: relative;
+    }
+  }
+
+  .explode-circle {
+    animation: explode 0.5s forwards;
+  }
+
+  .desplode-circle {
+    animation: desplode 0.5s forwards;
+  }
+
+  @keyframes explode {
+    0% {
+      width: 0px;
+      height: 0px;
+      margin-left: 0px;
+      margin-top: 0px;
+      background-color: rgba(42, 53, 80, 0.2);
+    }
+
+    100% {
+      width: 800px;
+      height: 800px;
+      margin-left: -200px;
+      margin-top: -200px;
+      background-color: $sc;
+    }
+  }
+
+  @keyframes desplode {
+    0% {
+      width: 400px;
+      height: 400px;
+      margin-left: -200px;
+      margin-top: -200px;
+      background-color: $sc;
+    }
+
+    100% {
+      width: 0px;
+      height: 0px;
+      margin-left: 0px;
+      margin-top: 0px;
+      background-color: rgba(129, 80, 108, 0.6);
+    }
+  }
+
+}
+
+// btn end
+
+
+// title
+.title {
+  font-size: rem(40px);
+  margin-bottom: rem(50px);
+  text-transform: uppercase;
+  position: relative;
+  padding-left: rem(12px);
+  color: $bc;
+  font-weight: 400;
+
+  @include lg {
+    margin-bottom: rem(45px);
+    font-size: rem(38px);
+  }
+
+  @include md {
+    margin-bottom: rem(40px);
+    font-size: rem(33px);
+  }
+
+  @include sm {
+    margin-bottom: rem(35px);
+    font-size: rem(27px);
+  }
+
+  @include xs {
+    margin-bottom: rem(30px);
+    font-size: rem(23px);
+  }
+
+  &:before {
+    position: absolute;
+    content: '';
+    left: 0;
+    width: rem(4px);
+    height: 100%;
+    background-color: $mc;
+  }
+}
+
+// title end
+
+.indent {
+  padding: rem(50px) 0;
+
+  @include lg {
+    padding: rem(45px) 0;
+  }
+
+  @include md {
+    padding: rem(40px) 0;
+  }
+
+  @include sm {
+    padding: rem(35px) 0;
+  }
+
+  @include xs {
+    padding: rem(30px) 0;
+  }
+}
+
+
+
+// // popup
+
+
+.popup-wrap {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  background-color: rgba($bc, .7);
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+  box-sizing: border-box;
+  display: none;
+
+  .popup {
+    background-color: $wc;
+    border-radius: rem(20px);
+    padding: rem(20px) rem(15px);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    &__check {
+      width: rem(100px);
+      height: rem(100px);
+      border-radius: 100%;
+      border: rem(10px) solid #3be83b;
+      position: relative;
+      margin-bottom: rem(20px);
+
+      i {
+        position: absolute;
+        border-radius: rem(3px);
+        background-color: #3be83b;
+        height: rem(15px);
+
+        &:first-child {
+          width: rem(37px);
+          transform: rotate(42deg);
+          left: rem(10px);
+          bottom: rem(30px);
+        }
+
+        &:last-child {
+          top: rem(38.5px);
+          width: rem(60px);
+          transform: rotate(-46.2deg);
+          left: 30%;
+        }
+      }
+    }
+
+    h2 {
+      text-transform: uppercase;
+      color: $mc;
+      font-size: rem(40px);
+      font-weight: 500;
+      margin-bottom: rem(10px);
+    }
+
+    span {
+      font-size: rem(16px);
+      font-weight: 500;
+      text-transform: uppercase;
+      visibility: $bc;
+      margin-bottom: rem(20px);
+      display: block;
+    }
+
+    p {
+      font-style: italic;
+    }
+  }
+}
+
+// // popup end
